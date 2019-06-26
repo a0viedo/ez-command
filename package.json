@@ -2,7 +2,10 @@
   "name": "ez-command",
   "version": "1.0.1",
   "description": "CLI tool that aggregates commands and facilitates their execution",
-  "main": "index.js",
+  "bin": {
+    "ez-command": "./bin/ez-command.js"
+  },
+  "main": "lib/index.js",
   "scripts": {
     "test": "eslint .",
     "start": "node lib/index",
