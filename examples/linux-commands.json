@@ -1,0 +1,43 @@
+[
+  {
+    "name": "python web server",
+    "command": "python -m SimpleHTTPServer"
+  }, {
+    "name": "uname",
+    "command": "uname -a"
+  },  {
+    "name": "ls",
+    "command": "ls -lha"
+  }, {
+    "name": "get open ports",
+    "command": "for i in {1..65535}; do (echo < /dev/tcp/127.0.0.1/$i) &>/dev/null && printf \"\n[+] Open Port at\n: \t%d\n\" \"$i\" || printf \"\"; done"
+  }, {
+    "name": "get partitions that are over 50%",
+    "command": "df -h |awk '{a=$5;gsub(/%/,\"\",a);if(a > 50){print $0}}'"
+  }, {
+    "name": "watch network activity logs",
+    "command": "lsof -i"
+  }, {
+    "name": "top most used commands",
+    "command": "history | awk '{a[$2]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn | head"
+  }, {
+    "name": "graphical tree of subdirectories",
+    "command": "ls -R | grep \":$\" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/ /' -e 's/-/|/'"
+  }, {
+    "name": "lsof",
+    "command": "lsof"
+  }, {
+    "name": "nslookup",
+    "command": "nslookup google.com"
+  }, {
+    "name": "ping cloudflare DNS",
+    "command": "ping 1.1.1.1"
+  }, {
+    "name": "kubectl get pods",
+    "command": "kubectl get pods"
+  }, {
+    "name": "node - setInterval with random string",
+    "command":
+      "node -e \"setInterval(()=>console.log('demo test' + Math.ceil(Math.random()*10000)),500)\""
+  }
+]

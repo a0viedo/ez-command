@@ -1,0 +1,36 @@
+{
+  "header": {
+    "fg": "232323"
+  },
+  "logContainer": {
+    "fg": "#232323",
+    "border": {
+      "type": "line",
+      "fg": "#000000"
+    }
+  },
+  "table": {
+    "fg": "#232323",
+    "cell": {
+      "selected": {
+        "bg": "#C9C8C8",
+        "fg": "bg"
+      },
+      "item": {
+        "fg": "fg",
+        "bg": "bg"
+      }
+    },
+    "border": {
+      "type": "line",
+      "fg": "#000000"
+    }
+  },
+  "configurationContainer": {
+    "fg": "#232323",
+    "border": {
+      "type": "line",
+      "fg": "#000000"
+    }
+  }
+}

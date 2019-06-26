@@ -1,0 +1,22 @@
+[
+  {
+    "name": "get replica set master",
+    "command": "mongo --eval \"rs.status().members.find(r=>r.state===1).name\""
+  },
+  {
+    "name": "get profiled queries",
+    "command": "mongo --eval \"db.system.profile.find().pretty()\""
+  },
+  {
+    "name": "get mongo current ops",
+    "command": "mongo --eval \"db.currentOp()\""
+  },
+  {
+    "name": "mongostat",
+    "command": "mongostat"
+  },
+  {
+    "name": "mongotop",
+    "command": "mongotop"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "header": {
+    "fg": "#f0f3f4"
+  },
+  "logContainer": {
+    "fg": "#f0f3f4",
+    "items": {
+      "selected": {
+        "bg": "#97c124",
+        "fg": "bg"
+      },
+      "item": {
+        "fg": "fg",
+        "bg": "bg"
+      }
+    },
+    "border": {
+      "type": "line",
+      "fg": "#97c124"
+    }
+  },
+  "table": {
+    "fg": "#f0f3f4",
+    "cell": {
+      "selected": {
+        "bg": "#97c124",
+        "fg": "bg"
+      },
+      "item": {
+        "fg": "fg",
+        "bg": "bg"
+      }
+    },
+    "border": {
+      "type": "line",
+      "fg": "#97c124"
+    }
+  },
+  "configurationContainer": {
+    "fg": "#f0f3f4",
+    "border": {
+      "type": "line",
+      "fg": "#97c124"
+    }
+  }
+}
