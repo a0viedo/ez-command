@@ -1,6 +1,6 @@
 {
   "name": "ez-command",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI tool that aggregates commands and facilitates their execution",
   "bin": {
     "ez-command": "./bin/ez-command.js"
