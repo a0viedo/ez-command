@@ -1,6 +1,6 @@
 {
   "name": "ez-command",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool that aggregates commands and facilitates their execution",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,11 @@
     "start": "node lib/index",
     "debug": "node --inspect lib/index"
   },
-  "keywords": ["cli", "tools", "bash"],
+  "keywords": [
+    "cli",
+    "tools",
+    "bash"
+  ],
   "author": "Alejandro Oviedo <alejandro.oviedo.g@gmail.com",
   "license": "MIT",
   "dependencies": {
