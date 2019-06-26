@@ -52,7 +52,7 @@ If you're not interested in separating different groups of commands you can prov
 ```
 
 ### Examples
-
+You can browse the [examples](./examples) directory to see some configurations.
 
 ## Customization
 The theme by default is `green` but you can tweak and provide your own customized theme by running:
