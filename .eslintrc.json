@@ -1,106 +1,356 @@
 {
   "rules": {
-    // common
-    "indent": ["error", 2, {"SwitchCase": 1}], // specify tab or space width for your code
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }], // specify whether backticks, double or single quotes should be used
-    "linebreak-style": ["error", "unix"], // disallow mixed 'LF' and 'CRLF' as linebreaks
-    "semi": ["error", "always"], // require or disallow use of semicolons instead of ASI
-    // errors
-    "no-extra-parens": ["error", "functions"], // disallow unnecessary parentheses
-    "no-unexpected-multiline": ["error"], // Avoid code that looks like two expressions but is actually one
-    "valid-jsdoc": ["warn"], // Ensure JSDoc comments are valid
-    // best practices
-    "block-scoped-var": ["error"], // treat var statements as if they were block scoped
-    "curly": ["error", "all"], // specify curly brace conventions for all control statements
-    "default-case": ["error"], // require default case in switch statements
-    "dot-notation": ["error"], // encourages use of dot notation whenever possible
-    "dot-location": ["error", "property"], // enforces consistent newlines before or after dots
-    "eqeqeq": ["error", "smart"], // require the use of === and !==
-    "guard-for-in": ["error"], // make sure for-in loops have an if statement
-    "no-alert": ["error"], // disallow the use of alert, confirm, and prompt
-    "no-empty": ["off"],
-    "no-caller": ["error"], // disallow use of arguments.caller or arguments.callee
-    "no-eq-null": ["error"], // disallow comparisons to null without a type-checking operator
-    "no-eval": ["error"], // disallow use of eval()
-    "no-extend-native": ["error"], // disallow adding to native types
-    "no-extra-bind": ["error"], // disallow unnecessary function binding
-    "no-fallthrough": ["error"], // disallow fallthrough of case statements (recommended)
-    "no-floating-decimal": ["error"], // disallow the use of leading or trailing decimal points in numeric literals
-    "no-implied-eval": ["error"], // disallow use of eval()-like methods
-    "no-iterator": ["error"], // disallow usage of __iterator__ property
-    "no-labels": ["error"], // disallow use of labeled statements
-    "no-lone-blocks": ["error"], // disallow unnecessary nested blocks
-    "no-loop-func": ["error"], // disallow creation of functions within loops
-    "no-multi-spaces": ["error"], // disallow use of multiple spaces
-    "no-multi-str": ["error"], // disallow use of multiline strings
-    "no-native-reassign": ["error"], // disallow reassignments of native objects
-    "no-new-func": ["error"], // disallow use of new operator for Function object
-    "no-new-wrappers": ["error"], // disallows creating new instances of String,Number, and Boolean
-    "no-new": ["error"], // disallow use of the new operator when not part of an assignment or comparison
-    "no-octal-escape": ["error"], // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \"error"51";
-    "no-octal": ["error"], // disallow use of octal literals (recommended)
-    "no-param-reassign": ["warn", {"props": false}], // disallow reassignment of function parameters
-    "no-proto": ["error"], // disallow usage of __proto__ property
-    "no-redeclare": ["error", {"builtinGlobals": true}], // disallow declaring the same variable more than once (recommended)
-    "no-return-assign": ["error"], // disallow use of assignment in return statement
-    "no-script-url": ["error"], // disallow use of javascript: urls.
-    "no-self-compare": ["error"], // disallow comparisons where both sides are exactly the same
-    "no-sequences": ["error"], // disallow use of the comma operator
-    "no-throw-literal": ["error"], // restrict what can be thrown as an exception
-    "no-unused-expressions": ["error"], // disallow usage of expressions in statement position
-    "no-useless-call": ["error"], // disallow unnecessary .call() and .apply()
-    "no-useless-concat": ["error"], // disallow unnecessary concatenation of literals or template literals
-    "no-void": ["error"], // disallow use of the void operator
-    "no-with": ["error"], // disallow use of the with statement
-    "radix": ["error"], // require use of the second argument for parseInt()
-    "wrap-iife": ["error"], // require immediate function invocation to be wrapped in parentheses
-    "no-inner-declarations": ["off"],
-    // Variables
-    "no-delete-var": ["error"], // disallow deletion of variables (recommended)
-    "no-label-var": ["error"], // disallow labels that share a name with a variable
-    "no-shadow-restricted-names": ["error"], // disallow shadowing of names such as arguments
-    "no-undef-init": ["error"], // disallow use of undefined when initializing variables
-    "no-undef": ["error"], // disallow use of undeclared variables unless mentioned in a /*global */ block (recommended)
-    "no-unused-vars": ["error"], // disallow declaration of variables that are not used in the code (recommended)
-    // nodejs
-    "callback-return": ["error", ["callback", "cb", "next"]], // enforce return after a callback
-    "handle-callback-err": ["off", "^(err\\d?|error\\d?|^.+Err$|^.+Error$)$"], // enforce error handling in callbacks
-    "no-mixed-requires": ["error", false], // disallow mixing regular variable and require declarations
-    "no-new-require": ["error"], // disallow use of new operator with the require function
-    "no-path-concat": ["error"], // disallow string concatenation with __dirname and __filename
-    "no-sync": ["error"], // disallow use of synchronous methods
-    // Stylistic
-    "array-bracket-spacing": ["warn", "never"], // enforce spacing inside array brackets
-    "block-spacing": ["warn", "never"], // disallow or enforce spaces inside of single line blocks
-    "brace-style": ["warn", "1tbs", { "allowSingleLine": false }], // enforce one true brace style
-    "camelcase": ["warn", {"properties": "always"}], // require camel case names
-    "comma-spacing": ["warn", {"before": false, "after": true}], // enforce spacing before and after comma
-    "comma-style": ["warn", "last"], // enforce one true comma style
-    "computed-property-spacing": ["warn", "never"], // require or disallow padding inside computed properties
-    "consistent-this": ["warn", "self"], // enforce consistent naming when capturing the current execution context
-    "eol-last": ["warn"], // enforce newline at the end of file, with no multiple empty lines
-    "key-spacing": ["warn", {"beforeColon": false, "afterColon": true}], // enforce spacing between keys and values in object literal properties
-    "max-nested-callbacks": ["warn", 6], // specify the maximum depth callbacks can be nested
-    "new-cap": ["warn", {"capIsNewExceptions": ["Router"]}], // require a capital letter for constructors
-    "new-parens": ["warn"], // disallow the omission of parentheses when invoking a constructor with no arguments
-    "newline-after-var": ["off"], // require or disallow an empty newline after variable declarations
-    "no-array-constructor": ["warn"], // disallow use of the Array constructor
-    "no-lonely-if": ["warn"], // disallow if as the only statement in an else block
-    "no-mixed-spaces-and-tabs": ["error"], // disallow mixed spaces and tabs for indentation (recommended)
-    "no-multiple-empty-lines": ["warn", {"max": 1}], // disallow multiple empty lines
-    "no-nested-ternary": ["warn"], // disallow nested ternary expressions
-    "no-new-object": ["warn"], // disallow the use of the Object constructor
-    "no-spaced-func": ["warn"], // disallow space between function identifier and application
-    "no-trailing-spaces": ["warn", { "skipBlankLines": true }], // disallow trailing whitespace at the end of lines
-    "no-unneeded-ternary": ["error"], // disallow the use of Boolean literals in conditional expressions
-    "operator-linebreak": ["warn", "after"], // enforce operators to be placed before or after line breaks
-    "quote-props": ["error", "as-needed"], // require quotes around object literal property names
-    "semi-spacing": ["warn", {"before": false, "after": true}], // enforce spacing before and after semicolons
-    "space-in-parens": ["warn", "never"], // require or disallow spaces inside parentheses
-    "space-unary-ops": ["warn", {"words": true, "nonwords": false}], // require or disallow spaces before/after unary operators
-    "spaced-comment": ["warn", "always"], // require or disallow a space immediately following the // or /* in a comment
-    "wrap-regex": ["warn"], // require regex literals to be wrapped in parentheses
-    "no-console": ["off"]
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-extra-parens": [
+      "error",
+      "functions"
+    ],
+    "no-unexpected-multiline": [
+      "error"
+    ],
+    "valid-jsdoc": [
+      "warn"
+    ],
+    "block-scoped-var": [
+      "error"
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "default-case": [
+      "error"
+    ],
+    "dot-notation": [
+      "error"
+    ],
+    "dot-location": [
+      "error",
+      "property"
+    ],
+    "eqeqeq": [
+      "error",
+      "smart"
+    ],
+    "guard-for-in": [
+      "error"
+    ],
+    "no-alert": [
+      "error"
+    ],
+    "no-empty": [
+      "off"
+    ],
+    "no-caller": [
+      "error"
+    ],
+    "no-eq-null": [
+      "error"
+    ],
+    "no-eval": [
+      "error"
+    ],
+    "no-extend-native": [
+      "error"
+    ],
+    "no-extra-bind": [
+      "error"
+    ],
+    "no-fallthrough": [
+      "error"
+    ],
+    "no-floating-decimal": [
+      "error"
+    ],
+    "no-implied-eval": [
+      "error"
+    ],
+    "no-iterator": [
+      "error"
+    ],
+    "no-labels": [
+      "error"
+    ],
+    "no-lone-blocks": [
+      "error"
+    ],
+    "no-loop-func": [
+      "error"
+    ],
+    "no-multi-spaces": [
+      "error"
+    ],
+    "no-multi-str": [
+      "error"
+    ],
+    "no-native-reassign": [
+      "error"
+    ],
+    "no-new-func": [
+      "error"
+    ],
+    "no-new-wrappers": [
+      "error"
+    ],
+    "no-new": [
+      "error"
+    ],
+    "no-octal-escape": [
+      "error"
+    ],
+    "no-octal": [
+      "error"
+    ],
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
+    "no-proto": [
+      "error"
+    ],
+    "no-redeclare": [
+      "error",
+      {
+        "builtinGlobals": true
+      }
+    ],
+    "no-return-assign": [
+      "error"
+    ],
+    "no-script-url": [
+      "error"
+    ],
+    "no-self-compare": [
+      "error"
+    ],
+    "no-sequences": [
+      "error"
+    ],
+    "no-throw-literal": [
+      "error"
+    ],
+    "no-unused-expressions": [
+      "error"
+    ],
+    "no-useless-call": [
+      "error"
+    ],
+    "no-useless-concat": [
+      "error"
+    ],
+    "no-void": [
+      "error"
+    ],
+    "no-with": [
+      "error"
+    ],
+    "radix": [
+      "error"
+    ],
+    "wrap-iife": [
+      "error"
+    ],
+    "no-inner-declarations": [
+      "off"
+    ],
+    "no-delete-var": [
+      "error"
+    ],
+    "no-label-var": [
+      "error"
+    ],
+    "no-shadow-restricted-names": [
+      "error"
+    ],
+    "no-undef-init": [
+      "error"
+    ],
+    "no-undef": [
+      "error"
+    ],
+    "no-unused-vars": [
+      "error"
+    ],
+    "callback-return": [
+      "error",
+      [
+        "callback",
+        "cb",
+        "next"
+      ]
+    ],
+    "handle-callback-err": [
+      "off",
+      "^(err\\d?|error\\d?|^.+Err$|^.+Error$)$"
+    ],
+    "no-mixed-requires": [
+      "error",
+      false
+    ],
+    "no-new-require": [
+      "error"
+    ],
+    "no-path-concat": [
+      "error"
+    ],
+    "no-sync": [
+      "error"
+    ],
+    "array-bracket-spacing": [
+      "warn",
+      "never"
+    ],
+    "block-spacing": [
+      "warn",
+      "never"
+    ],
+    "brace-style": [
+      "warn",
+      "1tbs",
+      {
+        "allowSingleLine": false
+      }
+    ],
+    "camelcase": [
+      "warn",
+      {
+        "properties": "always"
+      }
+    ],
+    "comma-spacing": [
+      "warn",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "comma-style": [
+      "warn",
+      "last"
+    ],
+    "computed-property-spacing": [
+      "warn",
+      "never"
+    ],
+    "consistent-this": [
+      "warn",
+      "self"
+    ],
+    "eol-last": [
+      "warn"
+    ],
+    "key-spacing": [
+      "warn",
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "max-nested-callbacks": [
+      "warn",
+      6
+    ],
+    "new-cap": [
+      "off"
+    ],
+    "new-parens": [
+      "warn"
+    ],
+    "newline-after-var": [
+      "off"
+    ],
+    "no-array-constructor": [
+      "warn"
+    ],
+    "no-lonely-if": [
+      "warn"
+    ],
+    "no-mixed-spaces-and-tabs": [
+      "error"
+    ],
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1
+      }
+    ],
+    "no-nested-ternary": [
+      "warn"
+    ],
+    "no-new-object": [
+      "warn"
+    ],
+    "no-spaced-func": [
+      "warn"
+    ],
+    "no-trailing-spaces": [
+      "warn",
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "no-unneeded-ternary": [
+      "error"
+    ],
+    "operator-linebreak": [
+      "warn",
+      "after"
+    ],
+    "quote-props": [
+      "error",
+      "as-needed"
+    ],
+    "semi-spacing": [
+      "warn",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "space-in-parens": [
+      "warn",
+      "never"
+    ],
+    "space-unary-ops": [
+      "warn",
+      {
+        "words": true,
+        "nonwords": false
+      }
+    ],
+    "spaced-comment": [
+      "warn",
+      "always"
+    ],
+    "wrap-regex": [
+      "warn"
+    ],
+    "no-console": [
+      "off"
+    ]
   },
   "env": {
     "node": true,
