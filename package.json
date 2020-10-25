@@ -21,7 +21,7 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.8.15",
-    "commander": "^5.0.0",
+    "commander": "^6.2.0",
     "date-fns": "^2.9.0",
     "promise-all-settled": "^1.1.0"
   },
